@@ -1,0 +1,18 @@
+lLogging
+Circular
+Linear
+
+primary files 3
+secondary files 2
+
+crtmqm -lc <qmgr_name>
+crtmqm -ll <qmgr_name>
+
+logmanager write logs every 30min or every 10K msgs or when explicitly called to write
+rcdmqimg -m <qmanager_name> -t object_type obj_name
+
+
+to recover the object
+
+***rcrmqobj -m <qmgr_name> -t objecttype  object_name
+rcrmqobj -m <qmgr_name> -t * *

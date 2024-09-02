@@ -1,0 +1,26 @@
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh B6CIMQ03 B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh CRM.PPS.SFA.XML B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh CRM.SFA.CCMS.XML B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh CRM.SFA.DI.CISF.XML B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh CRM.SFA.SSI.XML B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh CRM.SSI.SFA.XML B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh ESAMQ01 B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh KMQ.IRA.AGENT.QUEUE.5B114BC22227807E B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh MQMPSR3 B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh PUBLISH.SESSIONS.1 B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh PUBLISH.SESSIONS.2 B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh SFA_REQCOR.IN  B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh SFA_RESP.IN B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh SFA_SHOW_OPPTY.IN B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh SFA_SYNCPROXY.IN B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh SRWS.SESSIONS.1 B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh SRWS.SESSIONS.2 B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh SYSTEM.DEAD.LETTER.QUEUE B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh US01CSTIRN.SYNC.CONTACT.IN B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh US01CSTIRN.SYNC.OPPTY.IN B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh US01GHS.SC.IN B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh US01GHS.SHOW.OPPTY.IN B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh US01IRE.GPP.IN B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh US01IRE.SC.IN B1IVSC01
+UserParameter=queue_depth.CM11594.IN,/opt/zabbix/scripts/getqdepth.sh US01WHS.SC.IN B1IVSC01
+

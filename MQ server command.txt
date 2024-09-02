@@ -1,0 +1,96 @@
+MQ server
+Q manager
+contains all the channels
+
+channel
+	server connection SRVRCOMM
+	sender SDR
+	receiver RCVR
+	remote queue RQSTR
+queues
+	local
+	remote
+error logs under /var/mqm/qmgrs/SVT..../errors
+Oppty Revenue amount update via services is changing close date to last day of month
+
+
+scmq01.rtp.raleigh.ibm.com	
+root  / jan19pwd	
+
+scmqsl01.rtp.raleigh.ibm.com
+root / jun18pwd
+
+!n0r1t7@C
+
+SVT5 -> FxHub1
+SVT6 ->FxHub2	
+QM_MQDEV is the qmgr used LDPE 
+
+su - mqm
+
+dspmq
+
+runmqsc <queue name>
+ dis ()
+ 
+to start mq server
+strmqm <MQ server name>
+ 
+--> To check MQ Depath.
+b01aciwas050.ahe.pok.ibm.com 
+su - mqm 
+
+lsmqdp -m B01SCT01|head -30
+ 
+:Prod
+we have 2 servers in cluster
+049 and 050
+WAS runs on 050 while MQ can run on 050 or 049 as they are in cluster and the cluster name is 
+--> To check MQ Depath.
+b01aciwas050.ahe.pok.ibm.com 
+su - mqm 
+
+lsmqdp -m B01SCT01|head -30   
+dis q(CRM.PPS.SFA.XML_IN9086270_BKP) all
+
+
+echo DIS CHL(*) SSLCIPH SSLCAUTH | runmqsc B01SCT01
+echo DIS CHS(*) ALL              | runmqsc B01SCT01
+
+####to add autheroity on a Queue
+  syntax setmqaut -m <QMGRname> -t q -n <Queue name> -g <auth type options>   
+1. setmqaut -m B01SCT01 -t q -n US01WHS.SC.IN -g cstirong +get +browse +put +inq +passall   
+  Refresh the QMGR with new settings
+2. runmqsc B01SCT01 
+3. refresh security type(authserv)    
+
+
+all the channels on production
+as mqm
+runmqsc B01SCT01
+1 : dis chl(*) 
+   CHANNEL(B01SCT01.B6CIMQ01)              CHLTYPE(SDR)
+   CHANNEL(B01SCT01.B6CIMQ01.T)            CHLTYPE(SDR)
+   CHANNEL(B01SCT01.ESAMQ01)               CHLTYPE(SDR)
+   CHANNEL(B01SCT01.MQMPSP3)               CHLTYPE(SDR)
+   CHANNEL(B6CIMQ01.B01SCT01)              CHLTYPE(RCVR)
+   CHANNEL(CASTIRON.CLIENT)                CHLTYPE(SVRCONN)
+   CHANNEL(IDMPROD.B01SCT01)               CHLTYPE(RCVR)
+   CHANNEL(MQMPSP3.B01SCT01)               CHLTYPE(RCVR)
+   CHANNEL(MQMPSPC.B01SCT01)               CHLTYPE(RCVR)
+   CHANNEL(MQMPSRC.B01SCT01)               CHLTYPE(RCVR)
+   CHANNEL(MQPROD_PWD.B01SCT01)            CHLTYPE(RCVR)
+   CHANNEL(SSI.CLIENT)                     CHLTYPE(SVRCONN)
+
+
+AMQ8414: Display Channel details.
+   CHANNEL(SYSTEM.AUTO.RECEIVER)           CHLTYPE(RCVR)
+   CHANNEL(SYSTEM.AUTO.SVRCONN)            CHLTYPE(SVRCONN)
+   CHANNEL(SYSTEM.DEF.CLUSRCVR)            CHLTYPE(CLUSRCVR)
+   CHANNEL(SYSTEM.DEF.CLUSSDR)             CHLTYPE(CLUSSDR)
+   CHANNEL(SYSTEM.DEF.RECEIVER)            CHLTYPE(RCVR)
+   CHANNEL(SYSTEM.DEF.REQUESTER)           CHLTYPE(RQSTR)
+   CHANNEL(SYSTEM.DEF.SENDER)              CHLTYPE(SDR)
+   CHANNEL(SYSTEM.DEF.SERVER)              CHLTYPE(SVR)
+   CHANNEL(SYSTEM.DEF.SVRCONN)             CHLTYPE(SVRCONN)
+   CHANNEL(SYSTEM.DEF.CLNTCONN)            CHLTYPE(CLNTCONN)

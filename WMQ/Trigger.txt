@@ -1,0 +1,23 @@
+Trigger
+Triggering 
+Application
+Channel
+
+Trigtype
+	First
+	EVERY
+	DEPTH
+	NONE
+
+Application Triggering
+DEF QL(LQ1) TRIGGER TRIGTYPE(EVERY) PROECESS(P1) INITQ(INQ1)
+DEF QL(INQ1)
+DEF PROCESS(P1) APPLICID('C:\ABC.TXT')
+
+runmqtrm -m QM2 -q INQ1
+
+
+Channel Triggering
+DEF QL(Q2) USAGE(XMITQ) TRIGGER TRIGTYPE(FIRST) TRIGDATA('TO.QM2') INITQ(INQ2)
+
+runmqchi -m QM2 -q INQ2

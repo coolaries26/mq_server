@@ -1,0 +1,28 @@
+***********creating qmgr**********
+crtqmgr QM1
+creating local queue************
+crt ql(QM1.LQ01)
+creating Listener************
+crt listener((LST.QM1) TRPTYPE(TCP) +
+	PORT(1415) +
+	CONTROL(QMGR) 
+creating channel*************
+def chl(TO.QM1_MUM) +
+	chltype(SRVERCONN) TRPTYPE(TCP)
+
+****SET AUTHENTICATION FOR USER Guest*****
+setmqaut -m QM1 -t qmgr -p Guest +connect +browse +get
+**set mqauth -m QM1 -t q or queue -n QM1.LQ01 -p Guest +put +browse
+setmqaut -m QM1 -t queue -n QM1.LQ01 -p Guest +put +browse
+**dspmqauth -m QmgName -t objecttype -p userid/group 
+
+
+
+on the client side
+set path 
+set "MQSERVER=TO.QM1/tcp/localhost(1502)"
+amqsbcg QM1 QM1.LQ01
+
+
+set ""MQCHLLIB=<file name with path>"
+set "MQCHLTAB=AMQCHL.TAB"

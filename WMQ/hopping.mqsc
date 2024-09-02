@@ -1,0 +1,63 @@
+****creating objects for SBI_MUM*****
+***Creating local queue*****
+DEF QL(SBI_MUM.LQ01)
+
+***Creating Listener****
+DEF Listener(LST.SBI_MUM) TRPTYPE(TCP) +
+	PORT(1415) +
+	CONTROL(QMGR) 
+
+***Creating Channel****	
+DEF CHANNEL(TO.SBI_MUM) +
+	chltype(RCVR) TRPTYPE(TCP)
+
+	
+****Creating objects for SBI_BLR*****
+***Creating remote queue between SBI_MUM and SBI_BLR ****
+***same will work as local queue between SBI_BLR and IDEA
+DEF QR(SBI_BLR.RQ01) +
+	RNAME(SBI_MUM.LQ01) +
+	RQMNAME(SBI_MUM) REPLACE
+
+***Creating transmit queue****
+DEF QL(SBI_MUM) +
+	usage(XMITQ) REPLACE
+
+****Creating Channel****
+DEF CHANNEL(TO.SBI_MUM) +
+	CHLTYPE(SDR) +
+	CONNAME('LOCALHOST(1415)') +
+	XMITQ(SBI_MUM) REPLACE
+	
+
+***Creating objects between SBI_BLR and IDEA*****
+
+***Creating Listener between SBI_BLR and IDEA****
+DEF Listener(LST.SBI_BLR) TRPTYPE(TCP) +
+	PORT(1416) +
+	CONTROL(QMGR) REPLACE
+
+***Creating Channel between SBI_BLR and IDEA****	
+DEF CHANNEL(TO.SBI_BLR) +
+	chltype(RCVR) TRPTYPE(TCP) REPLACE
+		
+
+	
+****CReating objects for IDEA***
+***Creating Remote queue****
+DEF QR(IDEA.RQ01) +
+	RNAME(SBI_MUM.RQ01) +
+	RQMNAME(SBI_MUM) +
+	XMITQ(SBI_BLR) +
+	REPLACE
+***Creating Transmit queue***
+DEF QL(SBI_BLR) +
+	usage(XMITQ) REPLACE
+****Creating chanel****	
+DEF CHANNEL(TO.SBI_BLR) +
+	chltype(SDR) TRPTYPE(TCP) +
+	CONNAME('LOCALHOST(1416)') +
+	XMITQ(SBI_BLR) REPLACE
+
+
+	

@@ -1,0 +1,139 @@
+/usr/es/sbin/cluster/utilities/clRGinfo         //To know if the aix machine has a cluster
+sudo su - mqsi
+/MQHA/bin/hamqsi_stop_broker ECFGPRODBR 30
+To start WMB use:
+/MQHA/bin/hamqsi_start_broker ECFGPRODBR
+mv /tmp/mqbackup/var_mqm_jan122017.tar /var/mqm     Command to move a file to another directory
+df -h    ver o tamando em gb
+rpm -qa | grep MQ   ////////   See if the server has mq or client
+checar TSA.     comando :   lssam
+lsmqdp -z | grep WWPRT*
+xfreerdp -x m -u <user> -d <domain> -g 1024x700 <server name>       Access windows server
+reset channel(canal) SEQNUM(0)
+mqsilist BHBKRDV1 -e MDM1                         -----Check the processes
+mqsilist BHBKRDV1 | grep MDM*                     ---- Check MDM processes
+mqsistopmsgflow BHBKRDV1 -e MDM1                        ------              Stop the broker flow MDM1
+mqsistopmsgflow <nome_do_broker> -e <nome_do_execution_group>
+
+telnet 192.168.0.xx 1234      -----------  where 1234 is a port number
+
+# lsmqdp -m $QM -q IGFR2F.*
+amqsget SYSTEM.DEAD.LETTER.QUEUE  CORBZQA1  > /dev/null   Use if you can not clear dead letter queue
+mqsilist MASSIVEBRKR -e DSW    \\broker deploy confirmation
+scp remmel@pokgsa.ibm.com:/projects/i/igaaim/WMB/8.0/8.0.0.7/8.0.0-WS-MB-AIXPPC64-FP0007.tar /tmp/wmbcode   // To send the GSA file to the server.
+mqsilist -a -r -d2    // Check broker version
+Checar a versao do broker     mqslist -a -r -d2
+# STOP CHANNEL(QMBMSP.MQMESHP0)
+# reset chl(QMBMSP.MQMESHP0) seqnum(20)
+# START CHANNEL(QMBMSP.MQMESHP0)
+gzip -d 7.5.0-WS-MQ-AixPPC64-FP0006.tar.Z   //// Decompresses Z to tar after tar -xvf
+gunzip 7.5.0-WS-MQ-AixPPC64-FP0006.tar.Z   //// Unzip Z to tar
+du -ms .      ////// See folder size
+lsmqchl -m QM_NAME -t    //Check channel running
+dmpmqaut -m B3IVMQ01 -t q -n  IEB.EI1T    //Check user name
+runmqsc B3IVMQ01
+refresh security type(authserv)
+dis chs(Channel name) ALL
+Check the linux server name  ///  uname -a
+ls -ltrh       /// ver o tamanho dos arquivos.
+dmpmqaut -m ISBDBX1 -t qmgr -g users                   dmpmqaut -m ISBDBX1 -t qmgr -g users
+dmpmqaut -m ISBDBX1 -t channel -n ISB.CLIENT    dmpmqaut -m ISBDBX1 -t qmgr -g users
+DISPLAY CHANNEL(*) WHERE (SSLCIPH NE '')
+end
+alter channel(nome do canal) chltype() sipher     trocar o cipher
+dis q(CCE.AMERICAS.SAPCBS.OUT)
+depois, se vc der um sudo su - mqm
+ele nao vai deixar
+vc da um sudo su -
+depois vc da um su mqm
+/var/mqm/qmgrs  → Contém todos os dados dos queue managers existentes no servidor.
+
+/var/mqm/qmgrs/<qmgr_name>/errors  → Contém os logs das atividades dos queue managers (informações/erros/status dos objetos e do queue manager em si).
+
+/var/mqm/log  → Contém os logs transacionais dos queue managers (conhecidos como active logs). Os active logs são arquivos do sistema que o qmgr gera/aloca para gravar as mensagens que estão trafegando nas filas, com o objetivo de poder recuperar essas mensagens no caso de uma parada abrupta do qmgr.
+
+/var/mqm/log/<qmgr_name>/active  → É onde se localizam os arquivos active logs de cada queue manager.
+
+df -h /tmp     ver o tamanho do tmp
+versão do linux
+Contém os logs das atividades dos queue managers
+sudo -l //// mostra os acessos do grupo
+cat /etc/group | grep a03mqtm
+display lsstatus(WEC1) all
+lsmqdp -m WWDYZMQ -t                                        mostra todas as mensagens da fila
+lsmqdp -m WWDYZMQ -t | grep -i nome_da_fila       mostra as mensagens da fila
+dis q (WWDS7*) curdepth
+dis q(OL1*) curdepth
+
+echo "display chstatus(*)" | runmqsc QMBMSLNP   //// mostrar os channels sem entrar no qm
+ps -ef | grep mqm
+ps -ef | grep *BESClient     // checar se o processo existe
+lsmqdp -m WWDRYZ -t          mostrar os processosls -l
+clear qlocal (SYSTEM.DEAD.LETTER.QUEUE)
+lsmqdp -m QMGR -t   ///   mostrar a lista de curth death de todas as filas// colocar o qmanager
+lsmqdp -m XWCONT -t  ///  Exemplo
+lsmqdp -m QMBMSLNP -t
+dis q(E2OPEN.MQ*) curdepth    // para mostrar a numero de mensagens na fila   
+lrsmqdp -m QMGR  -t  exemplo  lrsmqdp -m WWDRYZ -t    ///////          listar o numero de queue no qmanage
+ps -ef | grep amqpcsea ---> Processo que roda o Command Server
+ps -ef | grep amqrmppa ---> Processo de Canais
+ps -ef | grep amqrrmfa ---> Processo do Cluster Repositório. Se o processo não estiver sendo executado, não será executado os canais cluster sender e receiver.
+ps -ef | grep runmqchi ---> Processo do Channel Initiator
+ps -ef | grep runmqtrm ---> Processo do Trigger Monitor
+ps -ef | grep runmqlsr ---> Processo do Listener
+DIS QR(SYSTEM.DEFAULT.REMOTE.QUEUE)     /// mostr ao qm
+ps -ef | grep bip | grep -v grep                      //// mostra o user e o processo
+dis chstatus(*) where (status eq stopped)    ///  isso ajuda a achar o channel especifico *** so funciona com runmqsc qm**
+dis ql(*) where (curdepth gt 1)     checar filas acima de uma mensagem
+dis q (*) where (usage eq xmitq)             ///  isso eh pra vc saber quals sao as filas de transmissao do qmgr que vc esta
+/var/log/user.log     /// para checar se o mq startou
+dis qmgr deadq                                   /// te mostra qual eh a queue sendo usada como DLQ // rodar o comando dentro do mq
+dis q (system.dead.letter.queue)                                       // mostrar o dead letter queue
+rpm -qa | grep MQServer                                                  ///  para ver no linux se roda MQ sever. se retornar o pacote e server se nao e client
+df -g                                                                               // mostrar diretorios com tamanho
+sudo su - mqsilist                                                                          /// checar processo de broker
+ps -ef | grep bip                                                             /// sabe se ha broker no servidor processos                                                          
+sudo su - mqm
+mqstop NOMEdoMQ    
+/home/mqm/bin/init/mqstop nome do qm                        parar o mq
+display ql(nome do qloca)                                            // mostra o detalhes do qlocal
+display QMGR all   ////   usar o QMGR  display as informacoes do QMANAGER  tem que estar dentro do qmgr
+dspmqinst  ou  dspmqver                                                                // checa a versao do MQ instalado
+/var/mqm/mqtools/mqmaint                                     //  /// abaixar o file system
+/var/mqm/mqtools/cronwrapper /var/mqm/mqtools/mqmaint -c > /dev/null 2>&1                                         /// abaixar o file system
+mqrc 2150                                                                  //checks the error binary file
+:q!                                                                              // sai do vi
+Crtl+F                                                                         // pula par aproxima pagina
+vi (nomedoarquivo)                                                       // acessa o arquivo
+amqsbcg SYSTEM.DEAD.LETTER.QUEUE EIPM        
+gzip -9 LOG*                                                              // comprimi todos os arquivos que comecam com LOG
+gzip -9 NOMEDOARQUIVO...                                       // zip o arquivo
+display   
+
+dis q(nome do qlocal)                                                  // mostra o se existe o qocal
+ps -ef | grep mqm                                                          // checar os processos do mq
+ps -ef | grep runmqlsr                                                     /// checar os processos do listener                                                                      
+display lsstatus(*)                                                         // mostra todos os listener do mq em questao
+display chstatus(*)                                                        // mostra todos os canais disponiveis no qmanager
+strmqm QM1                                                                // iniciar o queue manager quando estiver parado para que possa aplicar runmqsc
+endmqm -w                                                                 // termina o queue manager para que depois possa ser deletado
+dltmqm                                                                       // delete um queue manager
+crtmqm                                                                        // cria um queue manager
+dis chl(nome do channel)                                             //  mostra o status do channel
+delete chl(LUNAR1.LUNAR2)                                        //  deletar o channel criado
+runmqsc QM2                                                              //  para inciar o MQ criado
+dspmq                                                                        //  para verificar se o servidor esta rodando
+define channel(QM1.QM2) chltype(SDR) trptype(TCP) conname('localhost(1415)') xmitq(QM2)
+define listener(MQ2.1415) trptype(TCP) control(qmgr) port(1415)     //       definir ou criar o listener
+start listener(MQ2.1415)                                                // iniciar o listener
+display lsstatus(MQ2.1415) all                                     // mostar o status do listener
+start channel(QM1.QM2)                                               // MQSC commands can be used to start and stop message channels between queue managers.
+amqsput queue1                                                          // will create a message
+crtmqm -lc -uSYSTEM.DEAD.LETTER.QUEUE QM1      // criar a fila para erro de mensagens
+display chstatus(LUNAR1.LUNAR2) msgs                      // visualizar o numero de mensaagens
+display chstatus(MQ1.MQ2)
+du . | sort -rn | head 10
+du /var/mqm/log | sort -rn | head 10
+crontab -l                                                                     // sao as tarefas q rolam no server de acordo com dia , hora e talz
+/var/mqm/mqtools/cronwrapper /var/mqm/mqtools/mqmaint -c > /dev/null 2>&1           ///   essa linha acima "limpa" o FS do MQ se possivel
+df -m                                                                  

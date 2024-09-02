@@ -1,0 +1,66 @@
+   CHANNEL(B01SCT01.B6CIMQ01)              CHLTYPE(SDR)
+   SSLCIPH(TLS_RSA_WITH_AES_256_CBC_SHA256)
+
+   CHANNEL(B01SCT01.B6CIMQ01.T)            CHLTYPE(SDR)
+   SSLCIPH( )                           
+
+   CHANNEL(B01SCT01.ESAMQ01)               CHLTYPE(SDR)
+   SSLCIPH(TLS_RSA_WITH_AES_256_CBC_SHA256)
+
+   CHANNEL(B01SCT01.MQMPSP3)               CHLTYPE(SDR)
+   SSLCIPH( )                           
+
+   CHANNEL(B6CIMQ01.B01SCT01)              CHLTYPE(RCVR)
+   SSLCAUTH(REQUIRED)                   
+   SSLCIPH(TLS_RSA_WITH_AES_256_CBC_SHA256)
+
+   CHANNEL(CASTIRON.CLIENT)                CHLTYPE(SVRCONN)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(IDMPROD.B01SCT01)               CHLTYPE(RCVR)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(MQMPSP3.B01SCT01)               CHLTYPE(RCVR)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(MQMPSPC.B01SCT01)               CHLTYPE(RCVR)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(MQMPSRC.B01SCT01)               CHLTYPE(RCVR)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(MQPROD_PWD.B01SCT01)            CHLTYPE(RCVR)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(SSI.CLIENT)                     CHLTYPE(SVRCONN)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(SYSTEM.AUTO.RECEIVER)           CHLTYPE(RCVR)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(SYSTEM.AUTO.SVRCONN)            CHLTYPE(SVRCONN)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(SYSTEM.DEF.CLUSRCVR)            CHLTYPE(CLUSRCVR)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(SYSTEM.DEF.CLUSSDR)             CHLTYPE(CLUSSDR)
+   SSLCIPH( )                           
+
+   CHANNEL(SYSTEM.DEF.RECEIVER)            CHLTYPE(RCVR)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(SYSTEM.DEF.REQUESTER)           CHLTYPE(RQSTR)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(SYSTEM.DEF.SENDER)              CHLTYPE(SDR)
+   SSLCIPH( )                           
+
+   CHANNEL(SYSTEM.DEF.SERVER)              CHLTYPE(SVR)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(SYSTEM.DEF.SVRCONN)             CHLTYPE(SVRCONN)
+   SSLCAUTH(REQUIRED)                      SSLCIPH( )
+
+   CHANNEL(SYSTEM.DEF.CLNTCONN)            CHLTYPE(CLNTCONN)
+   SSLCIPH( )

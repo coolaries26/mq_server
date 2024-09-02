@@ -1,0 +1,6 @@
+	concern				resolution
+eaves dropping 	encription method (symtric and asymetric)
+
+etampering		hash function + digital certificate/signature
+
+impersonation	using root CA /digital certificate

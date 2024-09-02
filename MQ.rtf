@@ -1,0 +1,220 @@
+{\rtf1\ansi\deff0\adeflang1025
+{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\froman\fprq2\fcharset128 Liberation Serif{\*\falt Times New Roman};}{\f4\fswiss\fprq2\fcharset128 Liberation Sans{\*\falt Arial};}{\f5\fnil\fprq2\fcharset128 ???????;}{\f6\fnil\fprq2\fcharset128 Lohit Devanagari;}{\f7\fnil\fprq0\fcharset128 Lohit Devanagari;}}
+{\colortbl;\red0\green0\blue0;\red128\green128\blue128;}
+{\stylesheet{\s0\snext0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033 Default;}
+{\s15\sbasedon0\snext16\sb240\sa120\keepn\hich\af5\dbch\af6\afs28\loch\f4\fs28 Heading;}
+{\s16\sbasedon0\snext16\sb0\sa120 Text body;}
+{\s17\sbasedon16\snext17\sb0\sa120\dbch\af7 List;}
+{\s18\sbasedon0\snext18\sb120\sa120\noline\i\dbch\af7\afs24\ai\fs24 Caption;}
+{\s19\sbasedon0\snext19\noline\dbch\af7 Index;}
+}{\info{\creatim\yr0\mo0\dy0\hr0\min0}{\revtim\yr0\mo0\dy0\hr0\min0}{\printim\yr0\mo0\dy0\hr0\min0}{\comment OpenOffice}{\vern4110}}\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720\deftab720
+
+{\*\pgdsctbl
+{\pgdsc0\pgdscuse195\pgwsxn12240\pghsxn15840\marglsxn1800\margrsxn1800\margtsxn1440\margbsxn1440\pgdscnxt0 Default;}}
+\formshade{\*\pgdscno0}\paperh15840\paperw12240\margl1800\margr1800\margt1440\margb1440\sectd\sbknone\sectunlocked1\pgndec\pgwsxn12240\pghsxn15840\marglsxn1800\margrsxn1800\margtsxn1440\margbsxn1440\ftnbj\ftnstart1\ftnrstcont\ftnnar\aenddoc\aftnrstcont\aftnstart1\aftnnrlc
+\pgndec\pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1{\cf1\afs22\rtlch \ltrch\loch\fs22
+MQ is used for sending and receiving messages. You install MQ on two (or more) systems, perform a few basic configuration tasks, and can then use it to exchange data between the systems. It's a bit like email, but much faster, and much more reliable! Usually, an application (eg: CRM Siebel, or qcapture) puts some data into MQ on one system. It is sent by MQ to the receiving system, where another application (eg. GPP Siebel, or qapply) picks the data from MQ to use it.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1{\cf1\afs22\rtlch \ltrch\loch\fs22
+So: in general, anything on our CRM/FTS accounts that relies on data to be exchanged between different boxes, or different Geos, relies on MQ to be working. For example, account flow, oppty flow, and qapply/qcapture.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+Qcapture/Qapply}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+(1) Data change happens on CRM Prime DB, UCS81EP}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+(2) Qcapture, when it runs, picks up the change, and sends it as a message into MQ on c06prdb101}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+(3) The C06PR101 queue manager on c06prdb101 sends the message down MQ channel C06PR101.C06PR201, to the Reporting box c06prdb201}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+(4) Queue manager C06PR201 on c06prdb201 receives the message and puts it on queue RPT.RECVQ}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+(5) Qapply on 201, when it runs, picks message off queue RPT.RECVQ on C06PR201 queue manager and applies it to the Reporting DB, RPT81EP}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+(1) Data change happens on CRM AP or NA Prime DB.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+(2) Qcapture, when it runs, picks up the change, and sends it as a message into MQ on the AP/NA Prime box.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+(3) The queue manager on CRM Prime DB sends the message down an MQ channel to AP/NA AHE CRM qmgr (blue zone).}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+(4) The AP/NA AHE Blue Zone queue manager forwards message to EMEA AHE OLTP queue manager B6CIMQ05.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+(5) The EMEA AHE OLTP queue manager B6CIMQ05 forwards message to the AP/NA OLTP Replica box, a06prdb302.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+(4) Queue manager A06PR302 on a06prdb302 receives the message and puts it on queue QREP.AP.RECVQ or QREP.NA.RECVQ, as appropriate}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+(5) Qapply on a06prdb302 (assuming it's running and not stopped for EIW pull) picks message off the queue and applies it to the CRM AP/NA OLTP Replica DB, STG81AP or STG81NP.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033\sl240\slmult1\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320{\cf1\afs22\rtlch \ltrch\loch\fs22
+Also, C06PR101 and C06PR201 exchange "general admin" messages about qcapture/qapply too (so the MQ flow needs to be working both ways).}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+You need to login with mqm id to run any of the below commands}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+1) How to check if MQ is installed or not on a server/How to check the version of MQ?}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{{\*\bkmkstart __DdeLink__2_1683879512}\cf1\afs22\rtlch \ltrch\loch\fs22
+dspmqver}{{\*\bkmkend __DdeLink__2_1683879512}\cf1\afs22\rtlch \ltrch\loch\fs22
+ will display the version details of MQ if its installed.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+2) To view the queue manager }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+dspmq}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+3) To view the channels}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+lsmqchl or under runmqsc give as dis chstatus(*)}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+lsmqchl -m QMNAME}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+4) To check the queue depth of a particular queue manager}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+lsmqdp -m QMNAME}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+5) To check all channels /all queues}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+runmqsc (to get into MQ admin console) and then}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+dis chl(*) /dis queue(*)}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+6) To check complete details of dis qmgr/channel/queue}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+runmqsc and then}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+dis qmgr, dis chl(CHANNELNAME), display queue(QUEUENAME)}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+7) To start/stop channel}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+runmqsc and then}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+START CHANNEL(channel_name)/STOP CHANNEL(channel_name)}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+8) To dump message in a Queue to a file}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+/var/mqm/mqtools}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+./qload -m F06AP112 -i UCMWW.CON.ICS.UNSUB  -f /tmp/UCMWW.CON.ICS.UNSUB.out -dA}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+9)To Clear the messages in Queues after saving it:}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+./qload -m F06AP112 -I UCMWW.CON.ICS.UNSUB  -f /tmp/UCMWW.CON.ICS.UNSUB.out -dA}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+10) To resubmit messages into queues:}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+./qload -o UCMWW.CON.ICS.UNSUB -m F06AP112 -f /tmp/UCMWW.CON.ICS.UNSUB.out}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+11)  To Stop/start the qmanager }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+endmqm -i QMNAME}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+start the qmanager }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+strmqm QMNAME}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+12) To check errors related to channels and also to check the active log info which resides under /MQHA/C06PR201/log:}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+/var/mqm/qmgrs/QMNAME/errors  - tail -100 latest log file and you can see a message like }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+AMQ7468: The oldest log file required to perform media recovery of queue}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+manager C06PR201 is S0485391.LOG.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+It means S0485391.LOG is the active log which is used by MQ.So, we shouldnt touch active log and the logs generated after this.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+13) To check if any application processes are reading messages on a queue}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+DIS QSTATUS(CRMEM.SBL.CCM.XML.IOD) TYPE(HANDLE)}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+14) If there are more number of messages in a queue and you don't want to download all the messages and if you just want to download only last 1000 lines, then you can do that using mqbrowse tool as below.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+/var/mqm/mqtools/mqbrowse -m C06AP601 -q CRMEM.SBL.EAI.XML.IOD.EXC | tail -1000 > CRMEM.SBL.EAI.XML.IOD.EXC.out}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+Note: This will just generates the output file with last 1000 lines in a queue and will not delete the messages from queue }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\hich\af0\langfe1033\dbch\af0\afs24\lang1033\loch\f0\fs24\lang1033{\cf1\afs22\rtlch \ltrch\loch\fs22
+}
+\par }

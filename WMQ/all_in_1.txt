@@ -1,0 +1,218 @@
+MQ till version 8
+IIB after version 8
+DP
+Message oriented middleware
+	Synchronous
+		RMI 
+		Corba
+	Asynchronous
+		TIBCO
+		SONIC MQ
+		IBM WMQ
+		Open MQ
+		MS MQ
+		RABIT MQ
+
+SERVER(QMGR)
+	Queue
+		
+Security 
+	Application level
+	Network level((SSL)
+support both Synchronous as well as asynchronous (no data loss)
+	COD Code Of Delivery
+	COA Code of Arrival
+Application Parallelism
+
+
+mqm is the default user group
+it will use 3 directories
+	installation path 									/opt/mqm/bin
+	Data path (QMGR configuration properties stored)	/var/mqm/qmgrs
+	log path (to save logs)								/var/mqm/logs
+MQ consist of server, client, java jre, eclipse
+go to install image directory 
+run ./mqlicense.sh 	# to accept the license
+
+qmgr consists of queue,channel,listeners, senders,receivers + default objects system queue/channel/listener(70-80 in count)
+two type of commands we use on mqm prompt
+	control command
+		strmqm start 
+		endmqm	stop
+		crtmqm	create
+		dltmqm	delete
+		dspmq	display
+		dspmqver
+		
+	mqsc command(mq scripting)
+		runmqsc <QNAME>
+		>
+		.
+		.
+		end
+		within runmqsc prompt
+			DEFINE QL
+			dis ql(QUEUE_NAME)
+			
+			Alt QL or Alter QLocal
+			Alt QL (queue_name) 
+			replace
+			def ql(queue_name) variable(value) replace
+			
+		IPPROCS(N)	Indicates how many apps are connected for retriving msgs
+		OPPROCS (N)	indicates how many apps are putting the msgs
+		CURDEPTH(N)	 number of msgs in queue
+		
+MQRC - Return code
+dspmqfls	file system
+dspmqinst	installation info
+setmqinst	detting the primary
+
+
+syntax to create the qmgr
+	crtmqm <qmgr_name>
+
+types of queue
+	local	(physical repository, can hold messages)
+	remote
+	alias	(logical queue pointing to some physical queue either local/remote)
+			define queuealias (alias_name) target (local/remote physical queue name)
+			DEF QA(QA01) target (LQ01)
+	model
+
+runmqsc <qmanager name>
+define qlocal(queue_name)
+def ql(queue_name)
+	def ql(LQ1)
+	end
+	amqsput queue_name QMGR_name
+	amqsput LQ1 QM1
+	
+	
+###DAY 2
+MQI(Msg queuing Interface) Calls
+	if source is having only client and not the MQ server we can use common API on source to send the messages
+	MQCONN	connecting
+	MQOPEN	opening queue
+	MQCLOSE
+	MQPUT
+	MQPUT1	MQOPEN+MQPUT+MQCLOSE
+	MQGET
+	MQSET
+	MQINQ
+	MQBACK
+	MQDISC	DISCONNect
+	MQCOMIT
+	
+amqapi(API simulator avialable only in Version 7.0)
+RFHUTIL
+amqsbcg (to get information for a message)
+amqsgbr	(to browse the message)
+
+###msg type
+	datagram (code 8)
+	request
+	reply
+	report
+create mqsc script with file extension .mqsc
+to run the script
+runmqsc < <script_name.mqsc> > <output log name>
+	runmqsc -v <QMGR_Name> < <script_name> > (output log name)
+	runmqsc <QMGR_NAME> < test1.mqsc > /tmp/test1.out
+
+distributed MQ (DQM)
+
+we need a CHANNEL which can consist of 
+	MQI (msg wueuing Interface) bidirectional CLIENT-SRVER
+	
+	MCA Msg channel agent (Unidirectional) SRVR-SRVR
+		SDR
+		RCVR
+	Remote queue (it have destination details)
+	
+	XMIT queue (transmit queue) used on sender 
+		the name of XMIT queue is the name of nearest QMGR
+		
+
+DEF QL(ICICI.LQ01)
+DEF Listener(LST.icici) TRPTYPE(TCP) +
+	PORT(1415) +
+	CONTROL(QMGR) *-->Control(QMR) is optional if it is there no need to start / stop listener manually every time 
+	
+DEF CHANNEL(TO.ICICI) +
+	chltype(RCVR) TRPTYPE(TCP)
+
+	
+DEF QR(AIRTEL.RQ01) +
+	RNAME(ICICI.LQ01)
+	RQMNAME(ICICI)
+
+DEF QL(ICICI) +
+	usage(XMITQ) --> nearest queue mgr name
+	
+DEF CHANNEL(TO.ICICI) +
+	CHLTYPE(SDR) +
+	CONNAME('LOCALHOST(1415)') +
+	XMITQ(ICICI)
+	
+dis chstatus(*)
+
+********TO COPY ALL THE MESSAGES FROM DLQ TO SOME OTHR Q*********
+runmqdlq <qname> <qmgr name>
+runmqdlq dlq1 QM1
+INPUTQ(DLQ) INPUTQM(QM1)
+REASON(*) ACTION(FWD) FWDQ(QM1.LQ02) HEADER(NO)
+
+*********TO RETRIVE THE MESSAGES**********
+runmqdlq dlq1 QM1
+INPUTQ(DLQ) INPUTQM(QM1)
+ACTION(RETRY) RETRY(5)
+
+
+
+***********************************************
+client-Srvr connection
+on SRVR
+def QL(LQ01)
+
+DEF LiSTENER(LST1) TRPTYPE(TCP) PORT(1414)+
+		CONTROL(QMGR)
+START LISTENER(LST1)
+DEF CHANNEL(TO.QM1) CHLTYPE(SVRCONN) TRPTYPE(TCP)
+
+ON client SIDE
+SYNTAX	SET MQSERVER"CHANNEL/TRPTYPE/IP ADDRS(PORT NO)
+	SET "MQSERVER=TO.QM1/TCP/LOCALHOST(1414)"
+	EXPORT MQSERVER
+
+	
+runmqs <QMGR_name>
+ALTER QMGR CHLAUTH(DISABLED)
+ALTER QMGR CONNAUTH('')
+REFRESH SECURITY(*)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+to test any time
+	AMQSPUT
+	AMQSGET
+	AMQSBCG
+
+
+
+	
